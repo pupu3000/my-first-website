@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        html{
+            scroll-behavior: smooth;
+        }
+        body{
+            margin: 0;
+            font-family: sans-serif;
+        }
+        .box{
+            display:flex;
+            justify-content:center;
+            gap: 20px;
+            padding: 40px;
+        }
+        .item{
+            width:100px;
+            height:100px;
+            background-color:skyblue;
+            margin:10px;
+        }
+        .header{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 15px;
+            background: white;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+            box-sizing: border-box;
+        }
+        .header h1{
+            margin: 0;
+            font-size: 28px;
+            letter-spacing: 2px;
+            font-weight: 700;
+            color: #111;
+        }
+        .header h1:hover{
+            color: white;
+        }
+        nav a{
+            margin-left: 8px;
+            text-decoration: none;
+            color: black;
+            font-size: 12px;
+            margin-left: 10px;
+            font-weight: 8;
+            padding: 6px 10px;
+            border-radius: 8px;
+        }
+        nav a:hover{
+            color: #111;
+            background: #f1f1f1;
+            opacity: 1;
+        }
+        .mainvisual{
+            position: relative;
+        }
+
+        .mainvisual img{
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            display: block;
+            margin-top: 80px;
+            filter: brightness(70%);
+        }
+        .mainvisual h2{
+            position: absolute;
+            top:50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            color:white;
+            font-size: 56px;
+            text-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+            z-index: 10;
+            }
+        body{
+            margin: 0;
+            font-family: sans-serif;
+            background: #f8f9fa;
+            color: #333;
+            }
+
+        .btn{
+            position: absolute;
+            top:76%;
+            left: 50%;
+            transform: translateX(-50%);
+            padding: 14px 28px;
+            background: #111;
+            color: white;
+            text-decoration: none;
+            border-radius: 20px;
+            display: inline-block;
+            border-radius: 30px;
+            transition: 0.3s;
+        }
+        .btn:hover{
+            background: #333;
+            opacity: 0.8;
+            transform: translateX(-50%)scale(1.1);
+        }
+        .about{padding: 100px 20px;
+               text-align: center;}
+        
+        .about h3{
+            font-size: 40px;
+            margin-bottom: 20px;
+        }
+
+        .about p{
+            font-size: 20px;
+            line-height: 1.8;
+        }
+        section{
+            scroll-margin-top: 100px;
+        }
+
+        .service{
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            padding: 100px 20px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .card{
+            width: 250px;
+            padding: 30px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            transition: 0.3s;
+        }
+
+        .card:hover{
+            transform: translateY(-10px) scale(1.05);
+            box-shadow: 0 15px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .card h3{
+            margin-bottom: 15px;
+            font-size: 22px;
+        }
+
+        .card p{
+            color: #666;
+            line-height: 1.7;
+            font-size: 15px;
+        }
+
+        .footer{
+            background: #111;
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+            margin-top: 60px;
+        }
+
+        .footer p{
+            margin-top: 0;
+            font-size: 14px;
+            letter-spacing: 1px;
+            color: #ccc;
+        }
+
+        .contact{
+            text-align: center;
+            padding: 100px 20px;
+            background: #f1f3f5;
+        }
+
+        .contact h3{
+            font-size: 32px;
+            margin-bottom: 30px;
+        }
+
+        .contact input,
+        .contact textarea{
+            width: 300px;
+            padding: 12px;
+            margin: 10px 0;
+            display: block;
+            margin-left: auto;
+            margin-right:auto ;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            font-size: 16px;
+        }
+
+        .contact textarea{
+            height: 120px;
+        }
+
+        .contact button{
+            padding: 12px 30px;
+            background: black;
+            color: white;
+            border: none;
+            margin-top: 20px;
+            border-radius:30px;
+            cursor: pointer;
+            transition: 0.3s;
+            font-size: 16px;
+        }
+
+        .contact button:hover{
+            background: red;
+            transform: scale(1.1);
+        }
+
+        @media (max-width:768px){
+            .box{
+                flex-direction: column;
+                align-items: center;
+            }
+            .service{
+                flex-direction: column;
+                align-items: center;
+                background: #f1f3f5;
+            }
+            .mainvisual h2{
+                font-size: 40px;
+            }
+            nav a{
+                margin-left: 10px;
+                font-size: 14px;
+            }
+
+        }
+            
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+<header class="header">
+    <h1>RYU WEB STUDIO</h1>
+
+    <nav>
+        <a href="#home">ホーム</a>
+        <a href="#about">会社概要</a>
+        <a href="section">お問い合わせ</a>
+        </nav>
+</header>
+
+    <div id="home" class="mainvisual">
+        <img src="cat.jpg">
+        <h2>ようこそ</h2>
+        <a href="#about" class="btn">もっと見る</a>
+    </div>
+
+<div class="box">
+    <div class="item">1</div>
+    <div class="item">2</div>
+    <div class="item">3</div>
+</div>
+
+<section id="about" class="about">
+    <h3>ABOUT</h3>
+    <p>大阪を拠点に見やすく使いやすいwebサイト制作を目指しています。
+        HTML・CSSを学びながら、シンプルで伝わるデザインを大切にしています。
+
+    </p>
+</section>
+
+<section class="service">
+
+<div class="card">
+    <h3>HTML/CSS Design</h3>
+    <p>Webサイトのレイアウト作成・装飾ができます。</p>
+</div>
+
+<div class="card">
+    <h3>Responsive Design</h3>
+    <p>スマホ・タブレット対応の画面調整ができます。</p>
+</div>
+
+<div class="card">
+    <h3>Learning</h3>
+    <p>JavaScript・WoedPres習得に向けて学習中です</p>
+</div>
+
+</section>
+
+<section id="contact" class="contact">
+    <h3>お問い合わせ</h3>
+
+<p>X（旧Twitter）：＠mt7_a7x</p>
+<p>GitHub:</p>
+<p>ご相談・依頼はSNSのDMからお願いいたします。</p>
+
+</section>
+
+
+<footer class="footer">
+    <p>©︎ 2026 my site</p>
+</footer>
+
+</body>
+</html>
